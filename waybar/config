@@ -1,0 +1,156 @@
+{
+  "layer": "top",
+  "spacing": 0,
+  "height": 0,
+  "margin-bottom": 0,
+  "margin-top": 15,
+  "position": "top",
+  "margin-right": 500,
+  "margin-left": 500,
+  "modules-left": [
+    "hyprland/workspaces",
+    "sway/workspaces",
+    "temperature",
+    "cpu",
+    "memory",
+    "mpris"
+  ],
+  "modules-center": [
+    "custom/applauncher"
+  ],
+  "modules-right": [
+    "custom/update",
+    "network",
+    "battery",
+    "pulseaudio",
+    "tray",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "tooltip": false,
+    "interval": 5,
+    // "min-length": 6,
+    // "max-length": 6
+  },
+  "memory": {
+    "states": {
+      "warning": 75,
+      "critical": 90,
+    },
+
+    "format": "  {percentage}%",
+    "format-critical": "󰀦 {percentage}%",
+    "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB",
+    "interval": 5,
+    // "min-length": 7,
+    // "max-length": 7
+  },
+  "temperature": {
+    "interval": 10,
+    "tooltip": true,
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon1/temp1_input",
+      "/sys/class/thermal/thermal_zone0/temp",
+    ],
+    //"thermal-zone": 0,
+    "critical-threshold": 82,
+    "format-critical": "{temperatureC}°C {icon}",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["󰈸"],
+    "on-click-right": "kitty -e nvtop",
+  },
+  
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "wofi --show drun --location=top -y 15",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "format": "󰅐 {:%H:%M}",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": " {bandwidthDownBits}",
+    "format-ethernet": " {bandwidthDownBits}",
+    "format-disconnected": "󰤮 No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-icons": [
+      "",
+      "",
+      " "
+    ],
+    "nospacing": 1,
+    "format-muted": " ",
+    "on-click-middle": "WAYLAND_DISPLAY= pwvucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+    "tooltip": true,
+    "tooltip-format": "{volume}%"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄{capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "󱈑 {capacity}%",
+    "format-icons": [
+      "󱊡",
+      "󱊢",
+      "󱊣"
+    ]
+  },
+  "custom/update": {
+    "exec": "~/.config/waybar/scripts/system-update.sh",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "~/.config/waybar/scripts/system-update.sh up",
+    "interval": 30,
+    "min-length": 3,
+  },
+  "mpris#title": {
+    "format": "{title} ",
+    "format-paused": "{title} ",
+    "artist-len": 10,
+    "title-len": 20,
+  },
+
+  "mpris": {
+    "format": "{status_icon} | {artist} - {title}",
+    "format-paused": "{status_icon} | {artist} - {title}",
+    "artist-len": 10,
+    "title-len": 20,
+    "status-icons": {
+      "paused": " ",
+      "playing": "",
+      "stopped": "",
+    },
+    // "ignored-players": ["firefox"]
+  },
+}

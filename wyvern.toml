@@ -1,0 +1,19 @@
+terminal = "kitty"
+startup_apps = ["waybar", "swww-daemon", "clipse -listen", "dunst", "eww daemon", "eww open-many userinfo monthbox daybox yearbox clock-window", "ayugram-desktop"]
+
+[keyboard_shortcuts]
+"super+return" = "kitty"
+"super+f4" = "killall current-app" # placeholder, idk why i didnt implement it yet
+"super+q" = "quit" # quit wyvern
+"super+space" = "fuzzel"
+"super+v" = "kitty -e clipse"
+
+[display]
+scale = 1 # requires restart for wyvern
+
+[keyboard]
+layout = "us,iq"
+model = "pc105"
+variant = ""
+rules = "evdev"
+options = "grp:alt_shift_toggle"
