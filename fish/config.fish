@@ -3,6 +3,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 		set fish_greeting
 		echo "[ ] cd Architect && complete ."
+    echo "[ ] cd ignite && complete ."
+    echo "[ ] cd audiod && complete ."
 		alias vim=nvim
 end
 

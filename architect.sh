@@ -270,7 +270,14 @@ gnu-netcat
 python-hid
 lua53
 spice-vdagent
-deltachat-desktop"
+deltachat-desktop
+euphonica-git
+euphonica-git-debug
+hound
+timidity++
+mpc
+kid3
+fluffychat"
 )
 
 system_packages=(detected)
