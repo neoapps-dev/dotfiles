@@ -277,7 +277,21 @@ hound
 timidity++
 mpc
 kid3
-fluffychat"
+fluffychat
+turbo
+fjordlauncher
+nushell
+hdparm
+google-cloud-cli
+xorg-xinput
+hyperfine
+markdownlint
+mingw-w64-gcc
+markdownlint-cli
+shotcut
+cloudflared
+kdenlive
+tty-clock"
 )
 
 system_packages=(detected)

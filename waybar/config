@@ -8,8 +8,6 @@
   "margin-right": 500,
   "margin-left": 500,
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces",
     "temperature",
     "cpu",
     "memory",
@@ -26,16 +24,6 @@
     "tray",
     "clock"
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
   "cpu": {
     "format": "󰍛 {usage}%",
     "tooltip": false,
